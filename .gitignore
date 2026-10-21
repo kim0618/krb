@@ -1,0 +1,53 @@
+# KR-B .gitignore
+# 원칙: 데이터와 인증정보는 추적하지 않는다. 예제 설정과 연구 판정 문서는 추적한다.
+
+# 데이터 (디렉터리는 .gitkeep으로만 유지)
+data/raw/*
+data/cache/*
+data/processed/*
+!data/raw/.gitkeep
+!data/cache/.gitkeep
+!data/processed/.gitkeep
+
+# 대용량 실행 산출물 (reports/ 아래 판정 문서 .md는 추적)
+reports/runs/
+reports/tmp/
+reports/**/*.csv
+reports/**/*.json
+reports/**/*.jsonl
+reports/**/*.png
+*.parquet
+*.feather
+*.zip
+*.gz
+*.tar
+*.xlsx
+*.xls
+*.sqlite
+*.sqlite3
+*.db
+
+# 인증정보
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+secrets.toml
+config/sources.toml
+config/*.local.toml
+token*.json
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+.coverage
+.mypy_cache/
+.ruff_cache/

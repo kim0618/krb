@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "krb"
+version = "0.0.0"
+description = "KR-B: 대한민국 주식시장(KOSPI/KOSDAQ) 독립 정량 연구 프로젝트"
+readme = "README.md"
+requires-python = ">=3.12"
+# Phase 0(DATA FEASIBILITY) 단계라 런타임 의존성을 선언하지 않는다.
+# 표본 검증 코드가 승인되면 그때 필요한 것만 추가한다
+# (후보: exchange_calendars(XKRX), httpx, pandas, pyarrow).
+dependencies = []
+
+[project.optional-dependencies]
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
