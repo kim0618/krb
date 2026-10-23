@@ -8,13 +8,13 @@ version = "0.0.0"
 description = "KR-B: 대한민국 주식시장(KOSPI/KOSDAQ) 독립 정량 연구 프로젝트"
 readme = "README.md"
 requires-python = ">=3.12"
-# Phase 0(DATA FEASIBILITY) 단계라 런타임 의존성을 선언하지 않는다.
-# 표본 검증 코드가 승인되면 그때 필요한 것만 추가한다
-# (후보: exchange_calendars(XKRX), httpx, pandas, pyarrow).
+# Phase 0(DATA FEASIBILITY) 단계라 런타임 의존성을 선언하지 않는다(수집기는 표준 라이브러리만 쓴다).
+# XKRX 거래일 목록을 다시 만들 때만 calendar 추가 의존성이 필요하다(Gate D12, 2026-10-23 4.13.2로 생성).
 dependencies = []
 
 [project.optional-dependencies]
 test = ["pytest>=8"]
+calendar = ["exchange_calendars==4.13.2"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

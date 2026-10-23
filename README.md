@@ -17,6 +17,7 @@ US-B(`/home/tjd618/usb`)와는 별개 저장소다. US-B 코드·DB·인증정�
 | [docs/P0_V1_REVIEW.md](docs/P0_V1_REVIEW.md) | Phase 0 V1 문서 조사 결과 이관 |
 | [docs/SOURCE_REGISTER.md](docs/SOURCE_REGISTER.md) | 데이터 소스 등록부 |
 | [docs/P0_V2_SAMPLE_PLAN.md](docs/P0_V2_SAMPLE_PLAN.md) | 다음 실데이터 표본 검증 계획 |
+| [docs/KR6_DATA_HANDOFF.md](docs/KR6_DATA_HANDOFF.md) | KR-6 수집 데이터 현황·배치·로컬 복원 절차 |
 
 ## 설정과 인증정보
 
@@ -26,7 +27,9 @@ US-B(`/home/tjd618/usb`)와는 별개 저장소다. US-B 코드·DB·인증정�
 ## 테스트
 
 ```bash
+pip install -e '.[test]'
 python -m pytest
 ```
 
-현재 테스트는 없다. 의존성 설치는 아직 하지 않았다.
+테스트는 외부 네트워크를 쓰지 않는다(가짜 transport). 런타임 의존성은 없고, XKRX 거래일 목록을 다시 만들 때만
+`pip install -e '.[calendar]'`가 필요하다.
